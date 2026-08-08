@@ -35,28 +35,31 @@ function csinterviewhelp_design_styles() {
 			line-height: 1.8;
 		}
 
-		.site-header {
-			background: #101828;
+		#masthead,
+		.site-header,
+		#site-navigation,
+		.main-navigation,
+		.main-navigation .inside-navigation {
+			background: #101828 !important;
 			box-shadow: 0 8px 24px rgba(16, 24, 40, .12);
 		}
 
-		.site-header .inside-header {
+		.site-header .inside-header,
+		#site-navigation .inside-navigation {
 			padding: 18px 32px;
 		}
 
-		.site-branding .main-title a,
-		.site-branding .site-description {
-			color: #fff;
+		.site-header .site-branding .main-title a,
+		.site-header .site-branding .site-description,
+		.main-navigation .main-nav ul li a,
+		.main-navigation .menu-toggle {
+			color: #fff !important;
 		}
 
 		.site-branding .main-title {
 			font-size: clamp(22px, 2.4vw, 30px);
 			font-weight: 750;
 			letter-spacing: -.03em;
-		}
-
-		.main-navigation {
-			background: transparent;
 		}
 
 		.main-navigation .main-nav ul li a {
@@ -140,7 +143,54 @@ function csinterviewhelp_design_styles() {
 		}
 
 		.entry-content p {
-			margin-bottom: 1.25em;
+			margin: 0 0 1.35em;
+		}
+
+		.entry-content p:first-of-type {
+			color: #475467;
+			font-size: 19px;
+			line-height: 1.75;
+		}
+
+		.entry-content ul,
+		.entry-content ol {
+			margin: 0 0 1.5em;
+			padding-left: 1.35em;
+		}
+
+		.entry-content li {
+			margin-bottom: .45em;
+			padding-left: .25em;
+		}
+
+		.entry-content strong {
+			color: var(--csi-ink);
+			font-weight: 750;
+		}
+
+		.entry-content blockquote {
+			background: #f0f5ff;
+			border-left: 4px solid var(--csi-blue);
+			border-radius: 0 12px 12px 0;
+			color: #344054;
+			margin: 1.8em 0;
+			padding: 18px 22px;
+		}
+
+		.entry-content hr {
+			border: 0;
+			border-top: 1px solid var(--csi-border);
+			margin: 2.5em 0;
+		}
+
+		.entry-content img {
+			border-radius: 12px;
+			height: auto;
+			max-width: 100%;
+		}
+
+		.entry-content .wp-block-image {
+			margin: 2em 0;
 		}
 
 		.widget-area .widget {
@@ -187,7 +237,9 @@ function csinterviewhelp_design_styles() {
 			color: var(--csi-blue-dark);
 		}
 
-		.site-footer {
+		.site-footer,
+		.site-footer .inside-footer-widgets,
+		.site-footer .site-info {
 			background: #101828;
 			color: #98a2b3;
 		}
@@ -204,7 +256,8 @@ function csinterviewhelp_design_styles() {
 		}
 
 		@media (max-width: 768px) {
-			.site-header .inside-header {
+			.site-header .inside-header,
+			#site-navigation .inside-navigation {
 				padding: 16px 20px;
 			}
 
