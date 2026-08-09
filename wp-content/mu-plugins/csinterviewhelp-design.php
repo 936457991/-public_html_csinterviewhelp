@@ -113,6 +113,8 @@ function csinterviewhelp_design_styles() {
 		.entry-content {
 			color: #344054;
 			font-size: 17px;
+			line-height: 1.85;
+			max-width: 78ch;
 		}
 
 		.entry-content h2,
@@ -121,12 +123,13 @@ function csinterviewhelp_design_styles() {
 			font-weight: 750;
 			letter-spacing: -.025em;
 			line-height: 1.3;
-			margin-top: 2.2em;
 			margin-bottom: .65em;
 		}
 
 		.entry-content h2 {
 			font-size: clamp(25px, 3vw, 34px);
+			margin-top: 2.1em;
+			margin-bottom: 1em;
 			padding-left: 16px;
 			position: relative;
 		}
@@ -142,6 +145,26 @@ function csinterviewhelp_design_styles() {
 			width: 4px;
 		}
 
+		.entry-content h3 {
+			background: #f8fafc;
+			border: 1px solid var(--csi-border);
+			border-radius: 14px 14px 0 0;
+			font-size: 19px;
+			margin-top: 1.6em;
+			margin-bottom: 0;
+			padding: 18px 22px 10px;
+		}
+
+		.entry-content h3 + p {
+			background: #f8fafc;
+			border: 1px solid var(--csi-border);
+			border-top: 0;
+			border-radius: 0 0 14px 14px;
+			color: #475467;
+			margin: 0 0 20px;
+			padding: 0 22px 20px;
+		}
+
 		.entry-content p {
 			margin: 0 0 1.35em;
 		}
@@ -150,6 +173,10 @@ function csinterviewhelp_design_styles() {
 			color: #475467;
 			font-size: 19px;
 			line-height: 1.75;
+		}
+
+		.entry-content p + p {
+			margin-top: .15em;
 		}
 
 		.entry-content ul,
@@ -271,6 +298,20 @@ function csinterviewhelp_design_styles() {
 
 			.entry-content {
 				font-size: 16px;
+				line-height: 1.8;
+			}
+
+			.entry-content h2 {
+				margin-top: 1.8em;
+			}
+
+			.entry-content h3 {
+				font-size: 17px;
+				padding: 15px 17px 8px;
+			}
+
+			.entry-content h3 + p {
+				padding: 0 17px 17px;
 			}
 
 			.main-navigation .main-nav ul li a {
