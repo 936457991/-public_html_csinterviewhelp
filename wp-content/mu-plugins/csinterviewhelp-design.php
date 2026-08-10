@@ -117,6 +117,11 @@ function csinterviewhelp_design_styles() {
 			max-width: 78ch;
 		}
 
+		.single-post .entry-content {
+			font-size: 16px;
+			line-height: 1.75;
+		}
+
 		.entry-content h2,
 		.entry-content h3 {
 			color: var(--csi-ink);
@@ -132,6 +137,15 @@ function csinterviewhelp_design_styles() {
 			margin-bottom: 1em;
 			padding-left: 16px;
 			position: relative;
+		}
+
+		.single-post .entry-content h2 {
+			font-size: clamp(23px, 2.6vw, 30px);
+			margin-top: 1.8em;
+		}
+
+		.single-post .entry-content h3 {
+			font-size: 17px;
 		}
 
 		.entry-content h2::before {
@@ -172,6 +186,11 @@ function csinterviewhelp_design_styles() {
 		.entry-content p:first-of-type {
 			color: #475467;
 			font-size: 19px;
+			line-height: 1.75;
+		}
+
+		.single-post .entry-content p:first-of-type {
+			font-size: 17px;
 			line-height: 1.75;
 		}
 
@@ -406,8 +425,17 @@ function csinterviewhelp_design_styles() {
 				line-height: 1.8;
 			}
 
+			.single-post .entry-content {
+				font-size: 15px;
+				line-height: 1.7;
+			}
+
 			.entry-content h2 {
 				margin-top: 1.8em;
+			}
+
+			.single-post .entry-content h2 {
+				font-size: 22px;
 			}
 
 			.entry-content h3 {
