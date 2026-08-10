@@ -220,6 +220,111 @@ function csinterviewhelp_design_styles() {
 			margin: 2em 0;
 		}
 
+		/* Service sections stay readable beside the existing sidebar. */
+		.entry-content .csi-services,
+		.entry-content .csi-why-us {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 24px 0 34px;
+			width: 100%;
+		}
+
+		.entry-content .csi-why-us {
+			background: #f8fafc;
+			border: 1px solid var(--csi-border);
+			border-radius: 18px;
+			margin-top: 24px;
+			padding: 30px 22px;
+		}
+
+		.entry-content .csi-section-heading {
+			margin: 0 0 24px;
+			max-width: 100%;
+		}
+
+		.entry-content .csi-eyebrow {
+			color: var(--csi-blue);
+			display: block;
+			font-size: 12px;
+			font-weight: 800;
+			letter-spacing: .12em;
+			line-height: 1.4;
+		}
+
+		.entry-content .csi-section-heading h2 {
+			font-size: clamp(25px, 3vw, 34px);
+			margin: 8px 0 10px;
+			padding: 0;
+		}
+
+		.entry-content .csi-section-heading h2::before {
+			display: none;
+		}
+
+		.entry-content .csi-section-heading p {
+			color: var(--csi-muted);
+			font-size: 15px;
+			line-height: 1.65;
+			margin: 0;
+		}
+
+		.entry-content .csi-service-grid,
+		.entry-content .csi-feature-grid {
+			display: grid;
+			gap: 16px;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+
+		.entry-content .csi-service-card,
+		.entry-content .csi-feature-card {
+			background: #fff;
+			border: 1px solid var(--csi-border);
+			box-sizing: border-box;
+			border-radius: 14px;
+			box-shadow: 0 8px 20px rgba(16, 24, 40, .05);
+			min-width: 0;
+			overflow-wrap: break-word;
+			padding: 20px;
+		}
+
+		.entry-content .csi-service-card h3 {
+			background: transparent;
+			border: 0;
+			border-radius: 0;
+			font-size: 18px;
+			line-height: 1.35;
+			margin: 0 0 9px;
+			padding: 0;
+		}
+
+		.entry-content .csi-service-card h3::before {
+			display: none;
+		}
+
+		.entry-content .csi-service-card p,
+		.entry-content .csi-feature-card p {
+			background: transparent;
+			border: 0;
+			border-radius: 0;
+			color: var(--csi-muted);
+			font-size: 14px;
+			line-height: 1.7;
+			margin: 0;
+			padding: 0;
+		}
+
+		.entry-content .csi-feature-card strong {
+			color: var(--csi-ink);
+			display: block;
+			font-size: 17px;
+			line-height: 1.35;
+			margin-bottom: 8px;
+		}
+
+		.entry-content .csi-feature-card {
+			border-top: 3px solid var(--csi-blue);
+		}
+
 		.widget-area .widget {
 			padding: 24px;
 		}
@@ -312,6 +417,15 @@ function csinterviewhelp_design_styles() {
 
 			.entry-content h3 + p {
 				padding: 0 17px 17px;
+			}
+
+			.entry-content .csi-service-grid,
+			.entry-content .csi-feature-grid {
+				grid-template-columns: 1fr;
+			}
+
+			.entry-content .csi-why-us {
+				padding: 24px 16px;
 			}
 
 			.main-navigation .main-nav ul li a {
