@@ -400,6 +400,12 @@ function csinterviewhelp_design_styles() {
 			margin-top: 24px;
 		}
 
+		/* Keep the sidebar visible while reading long articles. */
+		#right-sidebar .inside-right-sidebar {
+			position: sticky;
+			top: 48px;
+		}
+
 		.widget-title {
 			color: var(--csi-ink);
 			font-size: 21px;
@@ -512,6 +518,10 @@ function csinterviewhelp_design_styles() {
 			.entry-content .csi-service-grid,
 			.entry-content .csi-feature-grid {
 				grid-template-columns: 1fr;
+			}
+
+			#right-sidebar .inside-right-sidebar {
+				position: static;
 			}
 
 			.entry-content .csi-why-us {
