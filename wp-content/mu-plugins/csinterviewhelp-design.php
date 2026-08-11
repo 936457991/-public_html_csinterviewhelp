@@ -125,6 +125,25 @@ function csinterviewhelp_design_styles() {
 		.single-post .entry-header .entry-title {
 			font-size: clamp(28px, 3.5vw, 40px);
 			line-height: 1.2;
+			margin-bottom: 18px;
+		}
+
+		/* Keep the featured image prominent without letting it dominate the article. */
+		.single-post .page-header-image-single {
+			background: #f8fafc;
+			border: 1px solid var(--csi-border);
+			border-radius: 16px;
+			margin: 0 0 18px;
+			overflow: hidden;
+			padding: 14px;
+		}
+
+		.single-post .page-header-image-single img {
+			display: block;
+			height: 240px;
+			margin: 0 auto;
+			object-fit: contain;
+			width: 100%;
 		}
 
 		.entry-content h2,
@@ -146,11 +165,17 @@ function csinterviewhelp_design_styles() {
 
 		.single-post .entry-content h2 {
 			font-size: clamp(21px, 2.2vw, 26px);
-			margin-top: 1.7em;
+			margin-top: 1.05em;
+			margin-bottom: .45em;
 		}
 
 		.single-post .entry-content h3 {
 			font-size: 16px;
+			margin-top: 1em;
+		}
+
+		.single-post .entry-content h3 + p {
+			margin-bottom: 14px;
 		}
 
 		.entry-content h2::before {
@@ -197,6 +222,24 @@ function csinterviewhelp_design_styles() {
 		.single-post .entry-content p:first-of-type {
 			font-size: 17px;
 			line-height: 1.75;
+		}
+
+		.single-post .entry-content img {
+			background: #f8fafc;
+			border: 1px solid var(--csi-border);
+			border-radius: 14px;
+			display: block;
+			height: auto;
+			margin: 24px auto;
+			max-height: 360px;
+			object-fit: contain;
+			padding: 8px;
+			width: auto;
+		}
+
+		.single-post .entry-content figure {
+			margin: 24px 0;
+			text-align: center;
 		}
 
 		.entry-content p + p {
@@ -441,6 +484,20 @@ function csinterviewhelp_design_styles() {
 
 			.single-post .entry-content h2 {
 				font-size: 20px;
+				margin-top: .9em;
+			}
+
+			.single-post .page-header-image-single {
+				margin-bottom: 14px;
+				padding: 10px;
+			}
+
+			.single-post .page-header-image-single img {
+				height: 170px;
+			}
+
+			.single-post .entry-content img {
+				max-height: 260px;
 			}
 
 			.entry-content h3 {
