@@ -122,6 +122,11 @@ function csinterviewhelp_design_styles() {
 			line-height: 1.75;
 		}
 
+		.single-post .entry-header .entry-title {
+			font-size: clamp(28px, 3.5vw, 40px);
+			line-height: 1.2;
+		}
+
 		.entry-content h2,
 		.entry-content h3 {
 			color: var(--csi-ink);
@@ -140,12 +145,12 @@ function csinterviewhelp_design_styles() {
 		}
 
 		.single-post .entry-content h2 {
-			font-size: clamp(23px, 2.6vw, 30px);
-			margin-top: 1.8em;
+			font-size: clamp(21px, 2.2vw, 26px);
+			margin-top: 1.7em;
 		}
 
 		.single-post .entry-content h3 {
-			font-size: 17px;
+			font-size: 16px;
 		}
 
 		.entry-content h2::before {
@@ -435,7 +440,7 @@ function csinterviewhelp_design_styles() {
 			}
 
 			.single-post .entry-content h2 {
-				font-size: 22px;
+				font-size: 20px;
 			}
 
 			.entry-content h3 {
