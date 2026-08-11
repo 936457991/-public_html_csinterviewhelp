@@ -122,10 +122,20 @@ function csinterviewhelp_design_styles() {
 			line-height: 1.75;
 		}
 
+		.page .entry-content {
+			font-size: 16px;
+			line-height: 1.75;
+		}
+
 		.single-post .entry-header .entry-title {
 			font-size: clamp(28px, 3.5vw, 40px);
 			line-height: 1.2;
 			margin-bottom: 18px;
+		}
+
+		.page .entry-header .entry-title {
+			font-size: clamp(30px, 3.8vw, 42px);
+			line-height: 1.2;
 		}
 
 		/* Keep the featured image prominent without letting it dominate the article. */
@@ -174,6 +184,15 @@ function csinterviewhelp_design_styles() {
 			margin-top: 1em;
 		}
 
+		.page .entry-content h2 {
+			font-size: clamp(22px, 2.4vw, 28px);
+			margin-top: 1.35em;
+		}
+
+		.page .entry-content h3 {
+			font-size: 17px;
+		}
+
 		.single-post .entry-content h3 + p {
 			margin-bottom: 14px;
 		}
@@ -220,6 +239,11 @@ function csinterviewhelp_design_styles() {
 		}
 
 		.single-post .entry-content p:first-of-type {
+			font-size: 17px;
+			line-height: 1.75;
+		}
+
+		.page .entry-content p:first-of-type {
 			font-size: 17px;
 			line-height: 1.75;
 		}
@@ -484,6 +508,11 @@ function csinterviewhelp_design_styles() {
 				line-height: 1.7;
 			}
 
+			.page .entry-content {
+				font-size: 15px;
+				line-height: 1.7;
+			}
+
 			.entry-content h2 {
 				margin-top: 1.8em;
 			}
@@ -491,6 +520,10 @@ function csinterviewhelp_design_styles() {
 			.single-post .entry-content h2 {
 				font-size: 20px;
 				margin-top: .9em;
+			}
+
+			.page .entry-content h2 {
+				font-size: 21px;
 			}
 
 			.single-post .page-header-image-single {
