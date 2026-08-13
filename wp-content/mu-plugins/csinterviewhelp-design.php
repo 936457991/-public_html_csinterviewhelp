@@ -9,6 +9,30 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+/**
+ * Add a compact homepage hero without changing the page content stored in WordPress.
+ */
+function csinterviewhelp_home_hero() {
+	if ( ! is_front_page() ) {
+		return;
+	}
+
+	printf(
+		'<section class="csi-home-hero" aria-labelledby="csi-home-hero-title">
+			<span class="csi-home-hero__eyebrow">CSINTERVIEWHELP · INTERVIEW PREP</span>
+			<h1 id="csi-home-hero-title">技术面试准备与求职陪跑</h1>
+			<p>专注算法、系统设计、项目梳理、简历优化与模拟面试，帮助你把准备过程拆清楚、练扎实。</p>
+			<div class="csi-home-hero__actions">
+				<a href="%1$s">查看面试案例</a>
+				<a href="%2$s">联系我们</a>
+			</div>
+		</section>',
+		esc_url( home_url( '/面试案例/' ) ),
+		esc_url( home_url( '/联系我们/' ) )
+	);
+}
+add_action( 'generate_before_content', 'csinterviewhelp_home_hero', 5 );
+
 function csinterviewhelp_design_styles() {
 	?>
 	<style id="csinterviewhelp-design">
@@ -482,6 +506,210 @@ function csinterviewhelp_design_styles() {
 			border-top: 1px solid rgba(255, 255, 255, .12);
 			font-size: 14px;
 			padding: 26px 24px;
+		}
+
+		/* Homepage landing-page layer. The existing page content remains intact. */
+		.home .inside-article {
+			padding-top: 30px;
+		}
+
+		.home .entry-header .entry-title {
+			display: none;
+		}
+
+		.csi-home-hero {
+			background: linear-gradient(135deg, #101828 0%, #1c3f78 100%);
+			border-radius: 20px;
+			box-shadow: 0 18px 42px rgba(16, 24, 40, .16);
+			color: #fff;
+			margin: 0 0 30px;
+			overflow: hidden;
+			padding: clamp(30px, 5vw, 56px);
+			position: relative;
+		}
+
+		.csi-home-hero::after {
+			background: radial-gradient(circle, rgba(83, 148, 255, .42), transparent 68%);
+			content: "";
+			height: 300px;
+			position: absolute;
+			right: -100px;
+			top: -120px;
+			width: 300px;
+		}
+
+		.csi-home-hero__eyebrow {
+			color: #b9d2ff;
+			display: block;
+			font-size: 12px;
+			font-weight: 800;
+			letter-spacing: .14em;
+			margin-bottom: 14px;
+			position: relative;
+			z-index: 1;
+		}
+
+		.csi-home-hero h1 {
+			color: #fff;
+			font-size: clamp(30px, 4.4vw, 50px);
+			letter-spacing: -.045em;
+			line-height: 1.18;
+			margin: 0 0 16px;
+			max-width: 720px;
+			position: relative;
+			z-index: 1;
+		}
+
+		.csi-home-hero p {
+			color: #dbe8ff;
+			font-size: 17px;
+			line-height: 1.75;
+			margin: 0;
+			max-width: 650px;
+			position: relative;
+			z-index: 1;
+		}
+
+		.csi-home-hero__actions {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 12px;
+			margin-top: 26px;
+			position: relative;
+			z-index: 1;
+		}
+
+		.csi-home-hero__actions a {
+			border: 1px solid rgba(255, 255, 255, .26);
+			border-radius: 10px;
+			color: #fff;
+			display: inline-block;
+			font-size: 15px;
+			font-weight: 700;
+			padding: 10px 17px;
+			text-decoration: none;
+			transition: transform .2s ease, background-color .2s ease;
+		}
+
+		.csi-home-hero__actions a:first-child {
+			background: #fff;
+			color: #1e4fb8;
+		}
+
+		.csi-home-hero__actions a:hover {
+			background: rgba(255, 255, 255, .14);
+			color: #fff;
+			transform: translateY(-2px);
+		}
+
+		.csi-home-section {
+			border-bottom: 1px solid var(--csi-border);
+			padding: 10px 0 24px;
+		}
+
+		.csi-home-section + .csi-home-section {
+			padding-top: 24px;
+		}
+
+		.home .csi-home-section > h2 {
+			margin-top: 0;
+		}
+
+		.home .csi-section-services,
+		.home .csi-section-platforms {
+			background: #f8fafc;
+			border: 1px solid var(--csi-border);
+			border-radius: 16px;
+			margin-top: 22px;
+			padding: 24px;
+		}
+
+		.home .csi-section-services p,
+		.home .csi-section-platforms p {
+			background: #fff;
+			border: 1px solid var(--csi-border);
+			border-radius: 12px;
+			margin: 12px 0;
+			padding: 14px 16px;
+		}
+
+		.home .csi-section-platforms strong,
+		.home .csi-section-services strong {
+			color: var(--csi-blue-dark);
+		}
+
+		.home .entry-content > h2 {
+			border-bottom: 1px solid var(--csi-border);
+			padding-bottom: 12px;
+		}
+
+		.home .entry-content > h2 + p {
+			margin-bottom: 22px;
+		}
+
+		/* Compact metadata improves scanability on long interview posts. */
+		.single-post .entry-meta {
+			color: var(--csi-muted);
+			font-size: 13px;
+			margin-bottom: 18px;
+		}
+
+		.single-post .entry-meta a {
+			font-weight: 600;
+		}
+
+		.single-post .cat-links,
+		.single-post .tags-links {
+			background: #f8fafc;
+			border: 1px solid var(--csi-border);
+			border-radius: 8px;
+			display: inline-block;
+			margin: 4px 6px 0 0;
+			padding: 4px 9px;
+		}
+
+		.single-post .entry-footer {
+			border-top: 1px solid var(--csi-border);
+			margin-top: 30px;
+			padding-top: 18px;
+		}
+
+		/* Sidebar remains in place, but its contact block reads as a clear CTA. */
+		#right-sidebar .widget:nth-child(2) {
+			border-top: 3px solid var(--csi-blue);
+		}
+
+		#right-sidebar .widget:nth-child(2) .widget-title {
+			margin-bottom: 12px;
+		}
+
+		#right-sidebar .widget img {
+			border-radius: 10px;
+			display: block;
+			margin: 12px auto;
+			max-height: 260px;
+			object-fit: contain;
+			width: auto;
+		}
+
+		@media (max-width: 768px) {
+			.home .inside-article {
+				padding-top: 20px;
+			}
+
+			.csi-home-hero {
+				border-radius: 15px;
+				padding: 28px 22px;
+			}
+
+			.csi-home-hero p {
+				font-size: 15px;
+			}
+
+			.home .csi-section-services,
+			.home .csi-section-platforms {
+				padding: 18px;
+			}
 		}
 
 		@media (max-width: 768px) {
