@@ -203,11 +203,6 @@ function csinterviewhelp_design_styles() {
 			margin-bottom: .45em;
 		}
 
-		.single-post .entry-content h3 {
-			font-size: 16px;
-			margin-top: 1em;
-		}
-
 		.page .entry-content h2 {
 			font-size: clamp(22px, 2.4vw, 28px);
 			margin-top: 1.35em;
@@ -215,10 +210,6 @@ function csinterviewhelp_design_styles() {
 
 		.page .entry-content h3 {
 			font-size: 17px;
-		}
-
-		.single-post .entry-content h3 + p {
-			margin-bottom: 14px;
 		}
 
 		.entry-content h2::before {
@@ -272,24 +263,6 @@ function csinterviewhelp_design_styles() {
 			line-height: 1.75;
 		}
 
-		.single-post .entry-content img {
-			background: #f8fafc;
-			border: 1px solid var(--csi-border);
-			border-radius: 14px;
-			display: block;
-			height: auto;
-			margin: 24px auto;
-			max-height: 360px;
-			object-fit: contain;
-			padding: 8px;
-			width: auto;
-		}
-
-		.single-post .entry-content figure {
-			margin: 24px 0;
-			text-align: center;
-		}
-
 		.entry-content p + p {
 			margin-top: .15em;
 		}
@@ -333,6 +306,89 @@ function csinterviewhelp_design_styles() {
 
 		.entry-content .wp-block-image {
 			margin: 2em 0;
+		}
+
+		/* Article headings and media follow the document flow, without service cards. */
+		.single-post .entry-content h3 {
+			background: transparent;
+			border: 0;
+			border-radius: 0;
+			font-size: 18px;
+			margin: 1.5em 0 .6em;
+			padding: 0;
+		}
+
+		.single-post .entry-content p {
+			margin-bottom: 1em;
+		}
+
+		.single-post .entry-content h3 + p {
+			background: transparent;
+			border: 0;
+			border-radius: 0;
+			color: inherit;
+			margin-top: 0;
+			padding: 0;
+		}
+
+		.single-post .entry-content img {
+			background: transparent;
+			border: 0;
+			border-radius: 0;
+			display: block;
+			height: auto;
+			margin: 1.25em auto;
+			max-height: none;
+			max-width: 100%;
+			padding: 0;
+			width: auto;
+		}
+
+		.single-post .entry-content .wp-block-image,
+		.single-post .entry-content figure:has(img),
+		.single-post .entry-content .wp-caption {
+			max-width: 100%;
+			margin: 1.25em auto;
+			text-align: center;
+		}
+
+		/* Gutenberg may put aligncenter on the image block or its nested figure. */
+		.single-post .entry-content .wp-block-image.aligncenter,
+		.single-post .entry-content .wp-block-image .aligncenter,
+		.single-post .entry-content .wp-caption.aligncenter {
+			clear: both;
+			display: block;
+			float: none;
+			margin-left: auto;
+			margin-right: auto;
+			max-width: 100%;
+			width: fit-content;
+		}
+
+		.single-post .entry-content img.aligncenter {
+			display: block;
+			float: none;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		/* Only the outer media block owns vertical spacing. */
+		.single-post .entry-content :is(figure, .wp-block-image, .wp-caption, p) img,
+		.single-post .entry-content .wp-block-image figure {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+
+		.single-post .entry-content :is(h2, h3) + :is(figure, .wp-block-image, .wp-caption) {
+			margin-top: 0;
+		}
+
+		.single-post .entry-content figcaption,
+		.single-post .entry-content .wp-caption-text {
+			color: var(--csi-muted);
+			font-size: 13px;
+			line-height: 1.6;
+			margin: .6em 0 0;
 		}
 
 		/* Service sections stay readable beside the existing sidebar. */
@@ -761,10 +817,6 @@ function csinterviewhelp_design_styles() {
 
 			.single-post .page-header-image-single img {
 				height: 170px;
-			}
-
-			.single-post .entry-content img {
-				max-height: 260px;
 			}
 
 			.entry-content h3 {
